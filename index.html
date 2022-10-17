@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velocímetro</title>
+  <style>
+    body {
+      text-align: center;
+    }
+    img {
+      height: 300px;
+      width: 300px;
+    }
+    h1 {
+      border-bottom-style: inset;
+    }
+    input#btVerificar {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <img src="velocímetro.png" alt="Velocímetro">
+  <h1>Velocímetro</h1>
+  <p>Velocidade permitida:
+    <input type="text" id="inVelocidadeP">
+  </p>
+  <p>Velocidade do condutor:
+    <input type="text" id="inVelocidadeC">
+  </p>
+  <p>
+    <input type="button" value="Verificar velocidade" id="btVerificar">
+  </p>
+  <h3 id="outResposta"></h3>
+  <script src="script.js"></script>
+</body>
+</html>
