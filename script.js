@@ -7,8 +7,8 @@ function calcularVelocidade() {
   //Obtem conteúdos dos campos de entrada
   let velP = Number(inVelocidadeP.value)
   let velC = Number(inVelocidadeC.value)
-  let porc = velP * 0.2
-
+  let res = 20 / 100 * velP
+  
   if (velP == 0 && velC == 0 || isNaN(velP + velC)) {
     alert('Digite uma velocidade válida')
     velP.focus()
@@ -19,13 +19,14 @@ function calcularVelocidade() {
     outResposta.textContent = 'Sem multa'
   }
 
-  if (velC + porc ) {
+  if (velC > velP && velC <= res) {
     outResposta.textContent = 'Multa leve'
   }
-   
-  if (velC > porc * 0.2 ) {
+
+  if (velC > velP && velC > res) {
     outResposta.textContent = 'Multa grave'
   }
+  
 }
 //Cria referência ao elemento btVerificar e associa a função ao click
 let btVerificar = document.getElementById('btVerificar')
