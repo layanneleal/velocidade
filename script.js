@@ -8,6 +8,7 @@ function calcularVelocidade() {
   let velP = Number(inVelocidadeP.value)
   let velC = Number(inVelocidadeC.value)
   let res = 20 / 100 * velP
+  //alert(res)
   
   //Se velocidade permitida e do condutor for 0 ou NaN
   if (velP == 0 && velC == 0 || isNaN(velP + velC)) {
@@ -15,16 +16,19 @@ function calcularVelocidade() {
     velP.focus()
     return
   }
+  //Somando a velocidade permitida com os 20% convertidos - Velocidade Limite
+  let velocidadeExtra = velP + res
+
   //Se a velocidade do condutor for menor/igual à velocidade permitida
   if (velC <= velP) {
     outResposta.textContent = 'Sem multa'
   }
   //Se a velocidade do condutor for maior e menor/igual a 20%
-  if (velC > velP && velC <= res) {
+  if (velC > velP && velC <= velocidadeExtra) {
     outResposta.textContent = 'Multa leve'
   }
   //Se a velocidade do condutor for maior que a permitida e maior que 20% da permitida
-  if (velC > velP && velC >= res) {
+  if (velC > velP && velC > velocidadeExtra) {
     outResposta.textContent = 'Multa grave'
   }
 }
